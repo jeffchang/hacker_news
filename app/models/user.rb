@@ -1,3 +1,8 @@
 class User < ActiveRecord::Base
-  #TODO : Use bcrypt to store hashed passwords and authenticate users
+  validates_uniqueness_of :email
+
+  def self.authenticate(email, password)
+    BCrypt::Password.new(User.where(email: email).first.password_hash) == password
+  end
+
 end
