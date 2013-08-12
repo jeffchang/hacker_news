@@ -2,6 +2,7 @@ get '/' do
   @users = User.all
   @email = session[:email]
   @error = session[:error]
+  session[:error] = nil
   erb :index
 end
 
@@ -14,8 +15,7 @@ get '/sessions/new' do
 end
 
 post '/sessions' do
-  session[:email] = params[:email] if User.authenticate(params[:email], params[:password])
-  session[:error] = nil
+  confirm_login
   redirect '/'
 end
 
