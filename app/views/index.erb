@@ -3,7 +3,7 @@
   <h1>Welcome to the Dummy Users page!</h1>
   <p><i>Authenticating dummy users since August 2013</i></p>
 
-  <% if @error %>
+  <% if @error && @error.length > 0 %>
     <div id="myModal" class="reveal-modal">
       <h1>Error!</h1>
       <% @error.each do |error| %>
