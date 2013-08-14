@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :posts, :comments
   validates_uniqueness_of :email
 
   def self.authenticate(email, password)
