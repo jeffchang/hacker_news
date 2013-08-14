@@ -1,10 +1,18 @@
 get '/' do
-  @users = User.all
-  @email = session[:email]
-  @error = session[:error]
-  session[:error] = nil
+  # @users = User.all
+  # @email = session[:email]
+  # @error = session[:error]
+  # session[:error] = nil
+  @all_posts = Post.all
   erb :index
 end
+
+get '/:post_id' do
+  @selected_post = Post.find(:post_id]
+  @post_comments = @selected_post.comments
+  erb :post
+end
+
 
 #----------- SESSIONS -----------
 

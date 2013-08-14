@@ -1,8 +1,9 @@
+<div id="posts" class="container">
+  <% @all_posts.each do |post| %>
+    <a href="/<%= post.id %>"><%= post.title %></a>
+  <% end %>
+</div>
 <div class="container">
-
-  <h1>Welcome to the Dummy Users page!</h1>
-  <p><i>Authenticating dummy users since August 2013</i></p>
-
   <% if @error && @error.length > 0 %>
     <div id="myModal" class="reveal-modal">
       <h1>Error!</h1>
