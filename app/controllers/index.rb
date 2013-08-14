@@ -1,8 +1,8 @@
 get '/' do
-  # @users = User.all
-  # @email = session[:email]
-  # @error = session[:error]
-  # session[:error] = nil
+  @users = User.all
+  @email = session[:email]
+  @error = session[:error]
+  session[:error] = nil
   @all_posts = Post.all
   erb :index
 end
