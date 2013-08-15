@@ -15,11 +15,12 @@
 
   <nav>
 
-    <div class="brand"><a href="/">User Authentication</a></div>
+    <div class="brand"><a href="/">Hacker News Wannabe!</a></div>
 
     <ul>
       <% if current_user %>
         <li><a id="sign-out" href="/sessions/<%= current_user.id %>">Sign Out</a></li>
+        <li><a id="profile" href="/profile">My Profile</a></li>
       <% else %>
         <li><a href="/sessions/new">Sign In</a></li>
         <li><a href="/users/new">Sign Up</a></li>

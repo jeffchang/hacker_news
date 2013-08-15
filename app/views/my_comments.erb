@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>My Comments</h1>
+
+  <% @comments.each do |comment| %>
+    <p class="comment"><%= comment.content %></p>
+  <% end %>
+</div>
