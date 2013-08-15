@@ -72,5 +72,5 @@ get '/:post_id' do
 end
 
 post '/:post_id' do
-  erb :post
+  redirect '/:post_id'
 end
