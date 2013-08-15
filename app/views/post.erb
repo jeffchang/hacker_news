@@ -1,5 +1,6 @@
-<h3 id="#post_title"><%= @selected_post.title %></h3>
-<div id="post-comments" class="container">
+<div class="container">
+  <h3 id="#post_title"><%= @selected_post.title %></h3>
+  <p><%= @selected_post.description %></p>
   <form action="/<%= @selected_post.id %>" method="post">
     <textarea name="comment_content" rows="5" cols="40" required></textarea>
     <br>
