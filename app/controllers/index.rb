@@ -8,7 +8,7 @@ get '/' do
 end
 
 get '/:post_id' do
-  @selected_post = Post.find(:post_id]
+  @selected_post = Post.find(params[:post_id])
   @post_comments = @selected_post.comments
   erb :post
 end
