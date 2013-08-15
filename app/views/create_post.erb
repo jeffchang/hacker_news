@@ -1,9 +1,13 @@
 <div class="container">
   <h3 id="post_create">Create a New Post</h3>
-  <form action="/create_post" method="post">
+  <form class="form-horizontal" action="/create_post" method="post">
+    <div class="form-group">
     <input type="text" name="post_title" size="49" placeholder="DBC Alum Hired As CEO of Google" required>
+    </div>
     <br>
+    <div class="form-group">
     <textarea name="post_description" rows="20" cols="50" required></textarea>
+    </div>
     <br>
     <input type="submit" name="create_post" value="Create">
   </form>

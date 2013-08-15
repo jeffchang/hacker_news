@@ -7,9 +7,11 @@
     <input type="hidden" name="post_id" value="<% @selected_post.id %>">
     <input type="submit" name="comment_submit" value="Comment">
   </form>
+  <br><br><br>
   <% @post_comments.each do |comment| %>
-    <%= comment.user %>
+    <%= comment.user.name %>
     <br>
     <%= comment.content %>
+    <br><br>
   <% end %>
 </div>
