@@ -61,6 +61,7 @@ get '/create_post' do
 end
 
 post '/create_post' do
+  Post.create(title: params[:post_title], description: params[:post_description])
   redirect '/'
 end
 
