@@ -61,7 +61,8 @@ get '/create_post' do
 end
 
 post '/create_post' do
-  Post.create(title: params[:post_title], description: params[:post_description])
+  @user = User.find_by_email(session[:email]) rescue nil
+  Post.create(title: params[:post_title], description: params[:post_description], user_id: @user.id)
   redirect '/'
 end
 
@@ -72,6 +73,7 @@ get '/:post_id' do
 end
 
 post '/:post_id' do
-  Comment.create(content: params[:comment_content])
+  @user = User.find_by_email(session[:email]) rescue nil
+  Comment.create(content: params[:comment_content], user_id: @user.id, post_id: params[:post_id])
   redirect "/#{params[:post_id]}"
 end

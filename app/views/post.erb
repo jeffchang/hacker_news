@@ -4,6 +4,7 @@
   <form action="/<%= @selected_post.id %>" method="post">
     <textarea name="comment_content" rows="5" cols="40" required></textarea>
     <br>
+    <input type="hidden" name="post_id" value="<% @selected_post.id %>">
     <input type="submit" name="comment_submit" value="Comment">
   </form>
   <% @post_comments.each do |comment| %>
