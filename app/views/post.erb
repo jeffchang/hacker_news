@@ -1,5 +1,10 @@
-<h3 id="#post-title"><%= @selected_post.title %></h3>
+<h3 id="#post_title"><%= @selected_post.title %></h3>
 <div id="post-comments" class="container">
+  <form action="/<%= @selected_post.id %>" method="post">
+    <input type="textarea" rows="5" cols="40" required>
+    <br>
+    <input type="submit" name="comment_submit" value="Comment">
+  </form>
   <% @post_comments.each do |comment| %>
     <%= comment.user %>
     <br>
