@@ -28,13 +28,13 @@ nav .brand, nav .brand a {
   font-size: 18pt;
   text-decoration: none;
   color: #444;
-  width: 60%;
+  width: 55%;
   display: inline-block;
 }
 
 nav ul {
   display: inline-block;
-  width: 30%;
+  width: 35%;
   text-align: right;
 }
 

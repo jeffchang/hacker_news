@@ -7,24 +7,6 @@ get '/' do
   erb :index
 end
 
-get '/:post_id' do
-  @selected_post = Post.find(params[:post_id])
-  @post_comments = @selected_post.comments
-  erb :post
-end
-
-post '/:post_id' do
-  erb :post
-end
-
-get '/create_post' do
-  erb :create_post
-end
-
-post '/create_post' do
-  erb :index
-end
-
 #----------- SESSIONS -----------
 
 get '/sessions/new' do
@@ -70,4 +52,24 @@ get '/my_comments' do
   @user = User.find_by_email(session[:email]) rescue nil
   @comments = Comment.where(user_id: @user.id)
   @user ? (erb :my_comments) : (redirect '/')
+end
+
+#------------ POSTS --------------
+
+get '/create_post' do
+  erb :create_post
+end
+
+post '/create_post' do
+  redirect '/'
+end
+
+get '/:post_id' do
+  @selected_post = Post.find(params[:post_id])
+  @post_comments = @selected_post.comments
+  erb :post
+end
+
+post '/:post_id' do
+  erb :post
 end
