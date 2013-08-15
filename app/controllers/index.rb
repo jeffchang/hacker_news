@@ -72,5 +72,6 @@ get '/:post_id' do
 end
 
 post '/:post_id' do
-  redirect '/:post_id'
+  Comment.create(content: params[:content])
+  redirect "/#{params[:post_id]}"
 end
