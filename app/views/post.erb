@@ -1,7 +1,7 @@
 <h3 id="#post_title"><%= @selected_post.title %></h3>
 <div id="post-comments" class="container">
   <form action="/<%= @selected_post.id %>" method="post">
-    <input type="textarea" rows="5" cols="40" required>
+    <textarea name="comment_content" rows="5" cols="40" required></textarea>
     <br>
     <input type="submit" name="comment_submit" value="Comment">
   </form>
